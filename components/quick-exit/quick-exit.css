@@ -1,0 +1,30 @@
+.quick-exit-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 0;
+  background: #fff;             /* must be solid, or text scrolls through it */
+  border-bottom: 1px solid currentColor;
+}
+
+.quick-exit-link {
+  display: inline-block;
+  border: 2px solid currentColor;
+  padding: 0.6rem 1.25rem;
+  min-height: 44px;             /* tap target floor */
+  line-height: 1.6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.quick-exit-link:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+.quick-exit-note {
+  margin: 0 0 1.5rem;
+  font-size: 0.9em;
+  max-width: 46ch;
+}

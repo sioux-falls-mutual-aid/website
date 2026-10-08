@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Exit demo — Sioux Falls Mutual Aid</title>
+  <link rel="stylesheet" href="quick-exit.css">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.5;
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 0 1rem 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="quick-exit-bar">
+    <a class="quick-exit-link" href="https://www.weather.gov/" rel="noreferrer nofollow">Quick exit</a>
+  </div>
+
+  <p class="quick-exit-note">Leaves this page right away, and so does pressing Escape twice on a keyboard. It cannot erase your history, so if someone checks this device, use one they cannot reach.</p>
+
+  <main>
+    <h1>Quick Exit demo</h1>
+
+    <p>This is a real working demo. Clicking Quick exit or pressing Escape twice quickly will leave this page for the National Weather Service.</p>
+
+    <p><strong>Important:</strong> Quick Exit replaces this current page in browser history. It does not erase browsing history or earlier pages you may already have visited on the same site.</p>
+
+    <label for="test-field">Typing test</label>
+    <input id="test-field" type="text">
+    <p>Focus the field above and press Escape twice. The exit should not fire while you are typing.</p>
+
+    <h2>Scroll test</h2>
+    <p>The content below exists mostly so you can confirm that the Quick exit control stays available while scrolling.</p>
+    <p>Keep scrolling. There is intentionally nothing exciting down here.</p>
+    <p style="margin-top: 70vh;">If the button is still at the top of the viewport, the sticky behavior is working.</p>
+  </main>
+
+  <script src="quick-exit.js"></script>
+</body>
+</html>

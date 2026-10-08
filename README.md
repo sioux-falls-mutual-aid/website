@@ -29,6 +29,19 @@ Things like:
 
 Basically: if it helps us make the public website more accurate, useful, understandable, or easier to maintain, it probably belongs here.
 
+## Reusable stuff other groups can steal
+
+We would rather solve a useful problem once and let other groups copy it.
+
+The **[mutual aid website toolkit](toolkit/README.md)** collects the small things we have already had to figure out, including:
+
+- **[Quick Exit](components/quick-exit/README.md)** — leave the current page quickly, including a double-Escape keyboard shortcut, with the safety caveats included.
+- **[Click-to-load map](toolkit/click-to-load-map.md)** — do not send visitor information to Google just because a page happens to contain a map.
+- **[WordPress privacy checklist](toolkit/wordpress-privacy-checklist.md)** — the third-party requests and privacy surprises we found on our own install.
+- **[One fact, one place](toolkit/synced-facts.md)** — stop one phone number from slowly becoming three different phone numbers.
+
+Please share this stuff freely, and we will happily accept the tiny gold star if somebody wants to give one.
+
 ## How we're building this
 
 One of our big rules is:
