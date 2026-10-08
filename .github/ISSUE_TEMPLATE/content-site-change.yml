@@ -1,0 +1,55 @@
+name: We should change something
+description: For page ideas, wording, navigation, components, structure, and other site changes.
+title: "[Site change] "
+labels: []
+body:
+  - type: input
+    id: area
+    attributes:
+      label: What part of the site are we talking about?
+      placeholder: Help Right Now, Resources, header, Resource card, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's the actual problem?
+      description: Start with what is making life harder for the person using the site.
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: What do you think we should change?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Who is this mostly for?
+      options:
+        - Somebody who needs urgent help
+        - Somebody browsing resources
+        - Somebody looking for community / connection
+        - A volunteer / contributor
+        - An organizer / maintainer
+        - Everybody / general
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: How will we know it worked?
+      description: If you can, give us something testable instead of "looks nicer."
+
+  - type: checkboxes
+    id: data
+    attributes:
+      label: One boring but important rule
+      options:
+        - label: This won't create another hand-maintained copy of information that belongs in a canonical resource record.
+          required: true

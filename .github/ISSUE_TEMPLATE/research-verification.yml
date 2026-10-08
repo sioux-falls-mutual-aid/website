@@ -1,0 +1,52 @@
+name: We need to check this
+description: For facts that are unclear, conflicting, suspiciously old, or probably going to require a phone call.
+title: "[Verify] "
+labels: []
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What exactly are we trying to find out?
+      description: The narrower the question, the easier it is to actually finish.
+    validations:
+      required: true
+
+  - type: textarea
+    id: known
+    attributes:
+      label: What do we already know?
+      description: Include the current public info and anything that disagrees with it.
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: What have we already checked?
+      description: Links are lovely. Primary sources are lovelier.
+
+  - type: dropdown
+    id: method
+    attributes:
+      label: What will probably settle this?
+      options:
+        - Current official webpage
+        - Compare a few current public sources
+        - Call or email the organization
+        - Government record
+        - Local / on-site confirmation
+        - No idea yet
+    validations:
+      required: true
+
+  - type: input
+    id: geography
+    attributes:
+      label: Where is this relevant?
+      placeholder: Sioux Falls, Clay County, statewide, etc.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Before you submit
+      options:
+        - label: This contains public information about a service, not private information about someone using it.
+          required: true

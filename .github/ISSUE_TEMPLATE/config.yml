@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Need mutual aid?
+    url: https://www.siouxfallsmutualaid.org/
+    about: Please don't put a personal request for help on GitHub. It's public. Use the actual SFMA website instead.

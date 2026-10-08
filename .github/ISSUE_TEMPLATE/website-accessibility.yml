@@ -1,0 +1,59 @@
+name: The website is being weird
+description: Something is broken, confusing, hard to use, inaccessible, or just making life harder than it needs to.
+title: "[Website] "
+labels: []
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Where did this happen?
+      placeholder: https://www.siouxfallsmutualaid.org/...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - Mobile layout
+        - Keyboard navigation
+        - Screen reader / page structure
+        - Low vision / text size / contrast
+        - Motion / animation
+        - Forms
+        - Navigation / finding information
+        - Broken link or button
+        - Crisis-flow problem
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: What were you trying to do, and what did the site do instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: What were you using?
+      description: Only if it's relevant.
+      placeholder: Example: iPhone + Safari; Windows + Chrome with keyboard only; NVDA + Firefox
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: How much of a problem is this?
+      description: Please say so if this could stop somebody from getting urgent help.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before you submit
+      options:
+        - label: Any screenshots or examples I included are free of private mutual-aid information.
+          required: true

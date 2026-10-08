@@ -1,0 +1,72 @@
+name: We should know about this resource
+description: Found a service, organization, or mutual-aid resource we should investigate? Toss it our way.
+title: "[Resource suggestion] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Excellent. Tell us about the **public resource**, not about a particular person who needs it.
+
+        If you're trying to request help for yourself or somebody else, please use the SFMA website instead.
+
+  - type: input
+    id: name
+    attributes:
+      label: What's it called?
+    validations:
+      required: true
+
+  - type: input
+    id: official
+    attributes:
+      label: Official website or best public source
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: helps
+    attributes:
+      label: What do they actually help with?
+      placeholder: Food, rent, rides, legal help, somewhere to be around humans, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: geography
+    attributes:
+      label: Where do they serve?
+      placeholder: Vermillion, Clay County, statewide, online, etc.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: What kind of resource is it?
+      options:
+        - Mutual aid / grassroots
+        - Nonprofit
+        - Government
+        - Faith / community
+        - Health / service provider
+        - Education / workforce
+        - Directory / information
+        - Other / I have no idea
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything we should double-check?
+      description: Hours, eligibility, cost, paperwork, service area, accessibility, whether the program still exists, etc.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before you submit
+      options:
+        - label: I did not include private information about someone seeking help.
+          required: true
