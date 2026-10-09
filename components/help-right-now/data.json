@@ -1,0 +1,10 @@
+{
+  "quick_exit.href": "https://www.weather.gov/",
+  "sf_shelter.phone_href": "tel:+16053384880",
+  "sf_shelter.info_href": "https://chssd.org/shelter",
+  "dvsos.phone_href": "tel:+16056245311",
+  "dvsos.info_href": "https://www.sd.gov/dps?id=cs_kb_article_view&sysparm_article=KB0043843",
+  "lifeline.call_href": "tel:988",
+  "lifeline.text_href": "sms:988",
+  "lifeline.info_href": "https://988lifeline.org/"
+}

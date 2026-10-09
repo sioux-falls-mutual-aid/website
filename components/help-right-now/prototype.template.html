@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Help Right Now prototype — Sioux Falls Mutual Aid</title>
+  <title>{{document.title}}</title>
   <link rel="stylesheet" href="../quick-exit/quick-exit.css">
   <style>
     :root {
@@ -166,92 +166,92 @@
 
 <body>
   <div class="quick-exit-bar">
-    <a class="quick-exit-link" href="https://www.weather.gov/" rel="noreferrer nofollow">Quick exit</a>
+    <a class="quick-exit-link" href="{{quick_exit.href}}" rel="noreferrer nofollow">{{quick_exit.label}}</a>
   </div>
 
   <div class="page-shell">
-    <p class="quick-exit-note">Leaves this page right away, and so does pressing Escape twice on a keyboard. It cannot erase your history, so if someone checks this device, use one they cannot reach.</p>
+    <p class="quick-exit-note">{{quick_exit.note}}</p>
 
     <main id="main">
       <div class="safety-note">
-        <strong>Someone may be monitoring your phone or device.</strong>
-        If that is possible, consider using a safer device before opening outside websites or changing settings.
+        <strong>{{safety.lead}}</strong>
+        {{safety.body}}
       </div>
 
-      <h1>Help right now</h1>
-      <p class="lede">You do not need to know which organization handles what. Pick where you are, then use the option that fits what is happening right now.</p>
+      <h1>{{page.heading}}</h1>
+      <p class="lede">{{page.lede}}</p>
 
       <div class="immediate">
-        <p><strong>If you are in immediate danger or need emergency medical help, call 911.</strong></p>
+        <p><strong>{{emergency.message}}</strong></p>
       </div>
 
-      <h2>Where are you?</h2>
+      <h2>{{location.heading}}</h2>
 
-      <nav class="location-choices" aria-label="Choose your area">
-        <a class="choice-link" href="#sioux-falls">Sioux Falls</a>
-        <a class="choice-link" href="#clay-county">Clay County</a>
+      <nav class="location-choices" aria-label="{{location.aria}}">
+        <a class="choice-link" href="#sioux-falls">{{location.sioux_falls}}</a>
+        <a class="choice-link" href="#clay-county">{{location.clay_county}}</a>
       </nav>
 
       <section id="sioux-falls" aria-labelledby="sioux-falls-title">
-        <h2 id="sioux-falls-title">Sioux Falls</h2>
+        <h2 id="sioux-falls-title">{{location.sioux_falls}}</h2>
 
-        <div class="action-grid" aria-label="Sioux Falls urgent needs">
-          <a class="choice-link" href="#sf-safe-tonight">I need somewhere safe tonight</a>
-          <a class="choice-link" href="#statewide-crisis">I’m having a mental-health crisis</a>
-          <a class="choice-link" href="#statewide-crisis">Something else is urgent</a>
+        <div class="action-grid" aria-label="{{sioux_falls.aria}}">
+          <a class="choice-link" href="#sf-safe-tonight">{{choice.safe_tonight}}</a>
+          <a class="choice-link" href="#statewide-crisis">{{choice.mental_health}}</a>
+          <a class="choice-link" href="#statewide-crisis">{{choice.other_urgent}}</a>
         </div>
 
         <div class="resource" id="sf-safe-tonight">
-          <h3>Children’s Home Shelter for Family Safety</h3>
-          <p>Emergency shelter and crisis support for people experiencing domestic violence, stalking, sexual assault and other abuse. The shelter says its crisis line is available 24 hours a day, 365 days a year.</p>
-          <p>113 N. St. Paul Ave., Sioux Falls</p>
+          <h3>{{sf_shelter.name}}</h3>
+          <p>{{sf_shelter.summary}}</p>
+          <p>{{sf_shelter.address}}</p>
           <div class="resource-actions">
-            <a href="tel:+16053384880">Call 605-338-4880</a>
-            <a href="https://chssd.org/shelter" rel="noreferrer">Open shelter information</a>
+            <a href="{{sf_shelter.phone_href}}">{{sf_shelter.call_label}}</a>
+            <a href="{{sf_shelter.info_href}}" rel="noreferrer">{{sf_shelter.info_label}}</a>
           </div>
-          <p class="meta">Last checked Oct. 9, 2026 · Source: Children’s Home Society of South Dakota</p>
+          <p class="meta">{{sf_shelter.meta}}</p>
         </div>
       </section>
 
       <section id="clay-county" aria-labelledby="clay-county-title">
-        <h2 id="clay-county-title">Clay County</h2>
+        <h2 id="clay-county-title">{{clay.heading}}</h2>
 
-        <div class="section-note">We have less locally verified crisis information for Clay County right now. We will say that instead of pretending a Sioux Falls service is local.</div>
+        <div class="section-note">{{clay.note}}</div>
 
-        <div class="action-grid" aria-label="Clay County urgent needs">
-          <a class="choice-link" href="#clay-abuse">I’m experiencing abuse</a>
-          <a class="choice-link" href="#statewide-crisis">I’m having a mental-health crisis</a>
-          <a class="choice-link" href="#statewide-crisis">Something else is urgent</a>
+        <div class="action-grid" aria-label="{{clay.aria}}">
+          <a class="choice-link" href="#clay-abuse">{{choice.abuse}}</a>
+          <a class="choice-link" href="#statewide-crisis">{{choice.mental_health}}</a>
+          <a class="choice-link" href="#statewide-crisis">{{choice.other_urgent}}</a>
         </div>
 
         <div class="resource" id="clay-abuse">
-          <h3>Domestic Violence Safe Option Services (DVSOS)</h3>
-          <p>South Dakota’s current victim-services listing identifies DVSOS in Vermillion as the local domestic-violence service contact.</p>
+          <h3>{{dvsos.name}}</h3>
+          <p>{{dvsos.summary}}</p>
           <div class="resource-actions">
-            <a href="tel:+16056245311">Call 605-624-5311</a>
-            <a href="https://www.sd.gov/dps?id=cs_kb_article_view&amp;sysparm_article=KB0043843" rel="noreferrer">Open the state listing</a>
+            <a href="{{dvsos.phone_href}}">{{dvsos.call_label}}</a>
+            <a href="{{dvsos.info_href}}" rel="noreferrer">{{dvsos.info_label}}</a>
           </div>
-          <p class="meta">Last checked Oct. 9, 2026 · Source: South Dakota Department of Public Safety</p>
+          <p class="meta">{{dvsos.meta}}</p>
         </div>
       </section>
 
       <section id="statewide-crisis" aria-labelledby="statewide-title">
-        <h2 id="statewide-title">Statewide / anywhere in South Dakota</h2>
+        <h2 id="statewide-title">{{statewide.heading}}</h2>
 
         <div class="resource">
-          <h3>988 Suicide &amp; Crisis Lifeline</h3>
-          <p>Call or text 988 for mental-health or suicide crisis support. The 988 Lifeline says call, text and chat services are available 24/7.</p>
+          <h3>{{lifeline.name}}</h3>
+          <p>{{lifeline.summary}}</p>
           <div class="resource-actions">
-            <a href="tel:988">Call 988</a>
-            <a href="sms:988">Text 988</a>
-            <a href="https://988lifeline.org/" rel="noreferrer">Open 988 Lifeline</a>
+            <a href="{{lifeline.call_href}}">{{lifeline.call_label}}</a>
+            <a href="{{lifeline.text_href}}">{{lifeline.text_label}}</a>
+            <a href="{{lifeline.info_href}}" rel="noreferrer">{{lifeline.info_label}}</a>
           </div>
-          <p class="meta">Last checked Oct. 9, 2026 · Source: 988 Suicide &amp; Crisis Lifeline</p>
+          <p class="meta">{{lifeline.meta}}</p>
         </div>
       </section>
 
       <div class="prototype-note">
-        <p><strong>Prototype:</strong> This is staging/reference code, not the finished WordPress page. Core phone numbers and crisis information are present in the HTML and remain usable without JavaScript. Quick Exit reuses the existing shared component rather than creating another copy.</p>
+        <p><strong>{{prototype.label}}</strong> {{prototype.note}}</p>
       </div>
     </main>
   </div>
