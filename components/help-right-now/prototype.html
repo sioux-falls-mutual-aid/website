@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help Right Now prototype — Sioux Falls Mutual Aid</title>
+
+  <!-- Reuse the existing Quick Exit component. Do not copy its logic here. -->
+  <link rel="stylesheet" href="../quick-exit/quick-exit.css">
+
+  <style>
+    :root {
+      font-family: system-ui, sans-serif;
+      line-height: 1.55;
+      color: #171717;
+      background: #fff;
+      --border: #2f2f2f;
+      --soft: #f3f3ef;
+      --urgent: #8b1e1e;
+      --link: #124c35;
+      --max: 52rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #171717;
+    }
+
+    a { color: var(--link); }
+
+    a:focus-visible,
+    .choice-link:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 3px;
+    }
+
+    .page-shell {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+      padding-bottom: 4rem;
+    }
+
+    .quick-exit-bar {
+      width: min(100% - 2rem, var(--max));
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .safety-note {
+      border-left: 5px solid var(--urgent);
+      padding: 0.85rem 1rem;
+      margin: 1rem 0 1.5rem;
+      background: #fff8f8;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      line-height: 1.05;
+      margin: 0.75rem 0;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.2rem;
+    }
+
+    .lede {
+      font-size: 1.15rem;
+      max-width: 42rem;
+    }
+
+    .immediate {
+      border: 3px solid var(--urgent);
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .immediate strong {
+      color: var(--urgent);
+    }
+
+    .location-choices,
+    .action-grid {
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      margin: 1rem 0 2rem;
+    }
+
+    .choice-link {
+      display: block;
+      border: 2px solid var(--border);
+      padding: 1rem;
+      min-height: 48px;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
+      background: #fff;
+    }
+
+    .choice-link:hover {
+      background: var(--soft);
+    }
+
+    .resource {
+      border-top: 2px solid var(--border);
+      padding: 1.25rem 0;
+    }
+
+    .resource:last-child {
+      border-bottom: 2px solid var(--border);
+    }
+
+    .resource p {
+      margin: 0.45rem 0;
+    }
+
+    .resource-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.75rem;
+    }
+
+    .resource-actions a {
+      display: inline-block;
+      border: 2px solid currentColor;
+      padding: 0.65rem 0.9rem;
+      min-height: 44px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .section-note {
+      background: var(--soft);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .prototype-note {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 375px) {
+      .page-shell,
+      .quick-exit-bar {
+        width: min(100% - 1rem, var(--max));
+      }
+
+      .location-choices,
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-actions {
+        display: grid;
+      }
+
+      .resource-actions a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="quick-exit-bar">
+    <a class="quick-exit-link" href="https://www.weather.gov/" rel="noreferrer nofollow">Quick exit</a>
+  </div>
+
+  <div class="page-shell">
+    <p class="quick-exit-note">
+      Leaves this page right away, and so does pressing Escape twice on a keyboard.
+      It cannot erase your history, so if someone checks this device, use one they cannot reach.
+    </p>
+
+    <main id="main">
+      <div class="safety-note">
+        <strong>Someone may be monitoring your phone or device.</strong>
+        If that is possible, consider using a safer device before opening outside websites or changing settings.
+      </div>
+
+      <h1>Help right now</h1>
+
+      <p class="lede">
+        You do not need to know which organization handles what.
+        Pick where you are, then use the option that fits what is happening right now.
+      </p>
+
+      <div class="immediate">
+        <p><strong>If you are in immediate danger or need emergency medical help, call 911.</strong></p>
+      </div>
+
+      <h2>Where are you?</h2>
+
+      <nav class="location-choices" aria-label="Choose your area">
+        <a class="choice-link" href="#sioux-falls">Sioux Falls</a>
+        <a class="choice-link" href="#clay-county">Clay County</a>
+      </nav>
+
+      <section id="sioux-falls" aria-labelledby="sioux-falls-title">
+        <h2 id="sioux-falls-title">Sioux Falls</h2>
+
+        <div class="action-grid" aria-label="Sioux Falls urgent needs">
+          <a class="choice-link" href="#sf-safe-tonight">I need somewhere safe tonight</a>
+          <a class="choice-link" href="#statewide-crisis">I’m having a mental-health crisis</a>
+          <a class="choice-link" href="#statewide-crisis">Something else is urgent</a>
+        </div>
+
+        <div class="resource" id="sf-safe-tonight">
+          <h3>Children’s Home Shelter for Family Safety</h3>
+          <p>
+            Emergency shelter and crisis support for people experiencing domestic violence,
+            stalking, sexual assault and other abuse. The shelter says its crisis line is available
+            24 hours a day, 365 days a year.
+          </p>
+          <p>113 N. St. Paul Ave., Sioux Falls</p>
+          <div class="resource-actions">
+            <a href="tel:+16053384880">Call 605-338-4880</a>
+            <a href="https://chssd.org/shelter" rel="noreferrer">Open shelter information</a>
+          </div>
+          <p class="meta">Last checked Oct. 9, 2026 · Source: Children’s Home Society of South Dakota</p>
+        </div>
+      </section>
+
+      <section id="clay-county" aria-labelledby="clay-county-title">
+        <h2 id="clay-county-title">Clay County</h2>
+
+        <div class="section-note">
+          We have less locally verified crisis information for Clay County right now.
+          We will say that instead of pretending a Sioux Falls service is local.
+        </div>
+
+        <div class="action-grid" aria-label="Clay County urgent needs">
+          <a class="choice-link" href="#clay-abuse">I’m experiencing abuse</a>
+          <a class="choice-link" href="#statewide-crisis">I’m having a mental-health crisis</a>
+          <a class="choice-link" href="#statewide-crisis">Something else is urgent</a>
+        </div>
+
+        <div class="resource" id="clay-abuse">
+          <h3>Domestic Violence Safe Option Services (DVSOS)</h3>
+          <p>
+            South Dakota’s current victim-services listing identifies DVSOS in Vermillion as the
+            local domestic-violence service contact.
+          </p>
+          <div class="resource-actions">
+            <a href="tel:+16056245311">Call 605-624-5311</a>
+            <a href="https://www.sd.gov/dps?id=cs_kb_article_view&amp;sysparm_article=KB0043843" rel="noreferrer">
+              Open the state listing
+            </a>
+          </div>
+          <p class="meta">Last checked Oct. 9, 2026 · Source: South Dakota Department of Public Safety</p>
+        </div>
+      </section>
+
+      <section id="statewide-crisis" aria-labelledby="statewide-title">
+        <h2 id="statewide-title">Statewide / anywhere in South Dakota</h2>
+
+        <div class="resource">
+          <h3>988 Suicide &amp; Crisis Lifeline</h3>
+          <p>
+            Call or text 988 for mental-health or suicide crisis support.
+            The 988 Lifeline says call, text and chat services are available 24/7.
+          </p>
+          <div class="resource-actions">
+            <a href="tel:988">Call 988</a>
+            <a href="sms:988">Text 988</a>
+            <a href="https://988lifeline.org/" rel="noreferrer">Open 988 Lifeline</a>
+          </div>
+          <p class="meta">Last checked Oct. 9, 2026 · Source: 988 Suicide &amp; Crisis Lifeline</p>
+        </div>
+      </section>
+
+      <div class="prototype-note">
+        <p>
+          <strong>Prototype:</strong> This is staging/reference code, not the finished WordPress page.
+          Core phone numbers and crisis information are present in the HTML and remain usable without JavaScript.
+          Quick Exit reuses the existing shared component rather than creating another copy.
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../quick-exit/quick-exit.js"></script>
+</body>
+</html>
