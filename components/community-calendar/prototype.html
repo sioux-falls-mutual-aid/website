@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>[WRITE: browser tab title]</title>
+  <link rel="stylesheet" href="calendar.css">
+  <script src="calendar.js" defer></script>
+</head>
+<body>
+  <main class="calendar-shell" id="main">
+    <header class="calendar-header">
+      <h1>[WRITE: calendar heading]</h1>
+      <p>[WRITE: short calendar introduction]</p>
+      <p class="preview-note">[WRITE: non-public preview notice]</p>
+    </header>
+    <section class="featured" aria-labelledby="featured-heading" id="featured-section">
+            <h2 id="featured-heading">[WRITE: featured section heading]</h2>
+            <ul><li data-feature-ref="event-health-connect-festival-2026"><a href="#event-health-connect-festival-2026">Health Connect Festival</a></li>
+<li data-feature-ref="event-helpline-family-volunteer-day-2026"><a href="#event-helpline-family-volunteer-day-2026">Family Volunteer Day</a></li></ul>
+        </section>
+    <section aria-labelledby="events-heading">
+      <h2 id="events-heading">[WRITE: all events heading]</h2>
+      <form class="event-filters" id="event-filters" action="" method="get" hidden>
+        <div class="filter-field">
+          <label for="filter-area">[WRITE: community filter label]</label>
+          <select id="filter-area" name="area"><option value="">[WRITE: all communities option]</option><option value="Sioux Falls">Sioux Falls</option><option value="Vermillion">Vermillion</option></select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-category">[WRITE: event type filter label]</label>
+          <select id="filter-category" name="category"><option value="">[WRITE: all event types option]</option><option value="arts">[WRITE: arts category]</option><option value="civic">[WRITE: civic category]</option><option value="community">[WRITE: community category]</option><option value="resources">[WRITE: resources category]</option><option value="volunteer">[WRITE: volunteer category]</option></select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-range">[WRITE: date-range filter label]</label>
+          <select id="filter-range" name="range"><option value="14">[WRITE: next 14 days option]</option><option value="all">[WRITE: all upcoming option]</option></select>
+        </div>
+        <div class="filter-field check-field">
+          <label><input id="filter-free" name="free" type="checkbox"> [WRITE: free events filter label]</label>
+        </div>
+        <button type="reset">[WRITE: reset filters]</button>
+      </form>
+      <p id="results-count" role="status" aria-live="polite" class="result-summary" hidden data-single="[WRITE: singular event result count; use {count}]" data-plural="[WRITE: plural event result count; use {count}]"></p>
+      <p id="no-results" hidden>[WRITE: no matching events message]</p>
+      <div id="event-list" class="event-list"><article class="event-card" id="event-health-connect-festival-2026"
+      data-area="Sioux Falls" data-category="resources"
+      data-cost="free" data-day="2026-10-17" data-end="2026-10-17T15:00:00-05:00">
+      <div class="card-main">
+        <div class="event-meta"><time datetime="2026-10-17T11:00:00-05:00">Sat, Oct 17, 2026</time><span class="time-range">11:00 AM–3:00 PM</span><span class="highlight-tag">[WRITE: mutual aid highlight label]</span></div>
+        <h3>Health Connect Festival</h3>
+        <p>Sioux Falls Arena · Sioux Falls</p>
+        <p>[WRITE: organizer field label]: Health Connect of South Dakota</p>
+        
+        <p class="event-tags"><span>[WRITE: resources category]</span><span>[WRITE: free label]</span></p>
+        <p><a href="https://www.healthconnectsd.org/festival" rel="noopener noreferrer">[WRITE: event source link label]</a></p>
+      </div>
+    </article>
+<article class="event-card" id="event-vermillion-city-council-2026-10-19"
+      data-area="Vermillion" data-category="civic"
+      data-cost="unknown" data-day="2026-10-19" data-end="2026-10-19T20:00:00-05:00">
+      <div class="card-main">
+        <div class="event-meta"><time datetime="2026-10-19T18:00:00-05:00">Mon, Oct 19, 2026</time><span class="time-range">6:00 PM–8:00 PM</span></div>
+        <h3>City Council Regular Meeting</h3>
+        <p>City Council Chambers · Vermillion</p>
+        <p>[WRITE: organizer field label]: City of Vermillion</p>
+        
+        <p class="event-tags"><span>[WRITE: civic category]</span><span>[WRITE: unknown cost label]</span></p>
+        <p><a href="https://www.vermillion.us/Calendar.aspx" rel="noopener noreferrer">[WRITE: event source link label]</a></p>
+      </div>
+    </article>
+<article class="event-card" id="event-prism-craft-chat-2026-10-21"
+      data-area="Sioux Falls" data-category="arts"
+      data-cost="unknown" data-day="2026-10-21" data-end="2026-10-21T20:00:00-05:00">
+      <div class="card-main">
+        <div class="event-meta"><time datetime="2026-10-21T18:00:00-05:00">Wed, Oct 21, 2026</time><span class="time-range">6:00 PM–8:00 PM</span></div>
+        <h3>Craft &amp; Chat</h3>
+        <p>Prism Community Center · Sioux Falls</p>
+        <p>[WRITE: organizer field label]: The Transformation Project</p>
+        
+        <p class="event-tags"><span>[WRITE: arts category]</span><span>[WRITE: unknown cost label]</span></p>
+        <p><a href="https://www.transformationprojectsd.org/events" rel="noopener noreferrer">[WRITE: event source link label]</a></p>
+      </div>
+    </article>
+<article class="event-card" id="event-vermillion-library-board-2026-10-21"
+      data-area="Vermillion" data-category="civic"
+      data-cost="unknown" data-day="2026-10-21" data-end="2026-10-21T19:00:00-05:00">
+      <div class="card-main">
+        <div class="event-meta"><time datetime="2026-10-21T18:00:00-05:00">Wed, Oct 21, 2026</time><span class="time-range">6:00 PM–7:00 PM</span></div>
+        <h3>Library Board of Trustees Meeting</h3>
+        <p>Kozak Community Room · Vermillion</p>
+        <p>[WRITE: organizer field label]: City of Vermillion</p>
+        
+        <p class="event-tags"><span>[WRITE: civic category]</span><span>[WRITE: unknown cost label]</span></p>
+        <p><a href="https://www.vermillion.us/Calendar.aspx?EID=981&amp;calType=0&amp;day=2&amp;month=10&amp;year=2026" rel="noopener noreferrer">[WRITE: event source link label]</a></p>
+      </div>
+    </article>
+<article class="event-card" id="event-prism-halloween-homecoming-2026"
+      data-area="Sioux Falls" data-category="community"
+      data-cost="free" data-day="2026-10-30" data-end="2026-10-30T21:00:00-05:00">
+      <div class="card-main">
+        <div class="event-meta"><time datetime="2026-10-30T17:00:00-05:00">Fri, Oct 30, 2026</time><span class="time-range">5:00 PM–9:00 PM</span></div>
+        <h3>Halloween Homecoming</h3>
+        <p>Prism Community Center · Sioux Falls</p>
+        <p>[WRITE: organizer field label]: The Transformation Project</p>
+        <p class="event-audience">[WRITE: audience field label]: LGBTQ+ youth ages 13–18</p>
+        <p class="event-tags"><span>[WRITE: community category]</span><span>[WRITE: free label]</span></p>
+        <p><a href="https://www.transformationprojectsd.org/events/halloween-homecoming" rel="noopener noreferrer">[WRITE: event source link label]</a></p>
+      </div>
+    </article>
+<article class="event-card" id="event-helpline-family-volunteer-day-2026"
+      data-area="Sioux Falls" data-category="volunteer"
+      data-cost="unknown" data-day="2026-11-21" data-end="">
+      <div class="card-main">
+        <div class="event-meta"><time datetime="2026-11-21">Sat, Nov 21, 2026</time><span class="highlight-tag">[WRITE: mutual aid highlight label]</span></div>
+        <h3>Family Volunteer Day</h3>
+        <p>Western Mall · Sioux Falls</p>
+        <p>[WRITE: organizer field label]: Helpline Center</p>
+        
+        <p class="event-tags"><span>[WRITE: volunteer category]</span><span>[WRITE: unknown cost label]</span></p>
+        <p><a href="https://www.helplinecenter.org/events/family-volunteer-day/" rel="noopener noreferrer">[WRITE: event source link label]</a></p>
+      </div>
+    </article></div>
+    </section>
+  </main>
+</body>
+</html>

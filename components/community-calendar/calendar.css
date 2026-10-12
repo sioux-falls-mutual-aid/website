@@ -1,0 +1,53 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: #1c2320;
+  background: #fff;
+  --line: #747c77;
+  --accent: #22553b;
+  --focus: #111;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 0.14em; }
+a:focus-visible, select:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.calendar-shell { max-width: 64rem; margin: 0 auto; padding: 1rem 1rem 4rem; }
+.calendar-header { border-bottom: 2px solid var(--line); padding-block: 1rem 1.75rem; }
+.calendar-header h1 { font-size: clamp(1.9rem, 6vw, 3rem); line-height: 1.15; overflow-wrap: anywhere; }
+.calendar-header p { max-width: 52rem; }
+h2 { margin: 2rem 0 1rem; font-size: clamp(1.4rem, 4vw, 1.9rem); }
+.event-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 1rem; align-items: end; border: 1px solid var(--line); padding: 1rem; margin-bottom: 1.25rem; }
+.filter-field { display: grid; gap: 0.4rem; min-width: 0; }
+.filter-field label { font-weight: 600; }
+.filter-field select { width: 100%; border: 1px solid var(--line); padding: 0.7rem 0.55rem; min-height: 44px; color: inherit; background: #fff; font: inherit; }
+.check-field { align-self: center; }
+.check-field label { display: flex; gap: 0.6rem; align-items: center; font-weight: 400; }
+.check-field input { width: 1.25rem; height: 1.25rem; }
+.event-filters button { font: inherit; padding: 0.7rem 1rem; min-height: 44px; background: #fff; color: inherit; border: 1px solid var(--line); cursor: pointer; }
+.featured { border-left: 5px solid var(--accent); padding: 0.1rem 1.2rem 0.75rem; margin-top: 1.5rem; background: #f5f8f5; }
+.featured ul { display: grid; gap: 0.5rem; padding-left: 1.25rem; }
+.result-summary { font-variant-numeric: tabular-nums; }
+.event-list { display: grid; gap: 0.85rem; }
+.event-card { border: 1px solid var(--line); padding: 1rem 1.25rem; min-width: 0; scroll-margin-top: 1rem; }
+.event-card h3 { font-size: 1.25rem; margin: 0.5rem 0; overflow-wrap: anywhere; }
+.event-card p { margin: 0.35rem 0; overflow-wrap: anywhere; }
+.event-card .event-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-weight: 600; }
+.highlight-tag { border: 1px solid var(--accent); padding: 0.1rem 0.4rem; font-size: 0.87rem; }
+.event-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.event-tags > span { background: #f2f4f2; border: 1px solid #c7cec8; padding: 0.15rem 0.45rem; }
+.preview-note { border: 2px dashed #646464; padding: 0.75rem; }
+@media (max-width: 375px) {
+  .calendar-shell { padding-inline: 0.5rem; }
+  .event-card { padding-inline: 0.75rem; }
+  .featured { padding-inline: 0.75rem; }
+}
+@media (prefers-contrast: more) {
+  :root { --line: #111; --accent: #163b27; }
+  .event-card { border-width: 2px; }
+}

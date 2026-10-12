@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{document.title}}</title>
+  <link rel="stylesheet" href="calendar.css">
+  <script src="calendar.js" defer></script>
+</head>
+<body>
+  <main class="calendar-shell" id="main">
+    <header class="calendar-header">
+      <h1>{{page.heading}}</h1>
+      <p>{{page.intro}}</p>
+      {{preview_banner}}
+    </header>
+    {{featured_section}}
+    <section aria-labelledby="events-heading">
+      <h2 id="events-heading">{{events.heading}}</h2>
+      <form class="event-filters" id="event-filters" action="" method="get" hidden>
+        <div class="filter-field">
+          <label for="filter-area">{{filter.area}}</label>
+          <select id="filter-area" name="area"><option value="">{{filter.all_areas}}</option>{{area_options}}</select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-category">{{filter.type}}</label>
+          <select id="filter-category" name="category"><option value="">{{filter.all_types}}</option>{{category_options}}</select>
+        </div>
+        <div class="filter-field">
+          <label for="filter-range">{{filter.range}}</label>
+          <select id="filter-range" name="range"><option value="14">{{filter.window}}</option><option value="all">{{filter.everything}}</option></select>
+        </div>
+        <div class="filter-field check-field">
+          <label><input id="filter-free" name="free" type="checkbox"> {{filter.free}}</label>
+        </div>
+        <button type="reset">{{filter.reset}}</button>
+      </form>
+      <p id="results-count" role="status" aria-live="polite" class="result-summary" hidden data-single="{{results.count_single}}" data-plural="{{results.count_plural}}"></p>
+      <p id="no-results" {{no_results_hidden}}>{{results.none}}</p>
+      <div id="event-list" class="event-list">{{event_cards}}</div>
+    </section>
+  </main>
+</body>
+</html>
