@@ -46,3 +46,7 @@ python test_browser.py
 ```
 
 No attendee data, private group information or contact details should be stored. The browser sends no requests to organizers' websites until a visitor clicks their links.
+
+## Event intake, review and mobile filters
+
+[WORKFLOW.md](WORKFLOW.md) documents the GitHub issue form, draft importer, organizer registration and separate approval gates. The issue form and review utility do not automatically publish submissions. The mobile filter controls are collapsed by default and expand on request; the underlying static listings remain present with JavaScript disabled. Public filter wording remains in `copy.json` for editorial approval.

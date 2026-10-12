@@ -27,5 +27,6 @@
   "results.none": "[WRITE: no matching events message]",
   "results.count_single": "[WRITE: singular event result count; use {count}]",
   "results.count_plural": "[WRITE: plural event result count; use {count}]",
-  "preview.notice": "[WRITE: non-public preview notice]"
+  "preview.notice": "[WRITE: non-public preview notice]",
+  "filter.toggle": "[WRITE: show and hide filters label]"
 }

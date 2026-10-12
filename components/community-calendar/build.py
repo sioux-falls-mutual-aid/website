@@ -84,7 +84,13 @@ def validate(organizers, events, copy):
             raise ValueError(f"Invalid cost in {event['id']}")
         if event["review_status"] not in STATUS:
             raise ValueError(f"Invalid review status in {event['id']}")
-        date.fromisoformat(event["source_checked_date"])
+        if event.get("source_checked_date"):
+            date.fromisoformat(event["source_checked_date"])
+        if event["review_status"] == "approved" and not event.get("source_checked_date"):
+            raise ValueError("Approved events must include a source verification date")
+        if event.get("feature_approved", False):
+            if event["review_status"] != "approved" or not event["mutual_aid_candidate"]:
+                raise ValueError("Featuring requires a reviewed, approved mutual aid candidate")
         safe_url(event["source_url"])
         event_datetime(event)
     needed = set(TOKEN.findall((HERE / "prototype.template.html").read_text(encoding="utf-8")))
@@ -94,7 +100,7 @@ def validate(organizers, events, copy):
         raise ValueError("Missing copy keys: " + ", ".join(sorted(missing)))
 
 
-def card(event, organizer, copy):
+def card(event, organizer, copy, preview=False):
     day, start, end = event_datetime(event)
     if start is None:
         when = f'<time datetime="{day.isoformat()}">{string(date_label(day))}</time>'
@@ -108,7 +114,7 @@ def card(event, organizer, copy):
     audience = (f'<p class="event-audience">{string(copy["event.audience"])}: '
                 f'{string(event["audience"])}</p>') if event.get("audience") else ""
     highlight = (f'<span class="highlight-tag">{string(copy["event.highlight"])}</span>'
-                 if event["mutual_aid_candidate"] else "")
+                 if (event["mutual_aid_candidate"] if preview else event.get("feature_approved", False)) else "")
     return f'''<article class="event-card" id="event-{string(event['id'])}"
       data-area="{string(event['community'])}" data-category="{string(event['category'])}"
       data-cost="{string(event['cost'])}" data-day="{day.isoformat()}" data-end="{string(end_iso)}">
@@ -143,12 +149,12 @@ def render(as_of: date, preview=False, require_copy=False):
             continue
         eligible.append(e)
     eligible.sort(key=lambda e: (event_datetime(e)[0], e.get("start", ""), e["title"].casefold()))
-    cards = "\n".join(card(e, org_by_id[e["organizer_id"]], copy) for e in eligible)
+    cards = "\n".join(card(e, org_by_id[e["organizer_id"]], copy, preview) for e in eligible)
     areas = sorted({e["community"] for e in eligible})
     categories = sorted({e["category"] for e in eligible})
     area_options = "".join(f'<option value="{string(a)}">{string(a)}</option>' for a in areas)
     category_options = "".join(f'<option value="{string(c)}">{string(copy["category." + c])}</option>' for c in categories)
-    featured = [e for e in eligible if e["mutual_aid_candidate"]][:5]
+    featured = [e for e in eligible if (e["mutual_aid_candidate"] if preview else e.get("feature_approved", False))][:5]
     featured_section = ""
     if featured:
         links = "\n".join(

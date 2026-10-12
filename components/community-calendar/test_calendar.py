@@ -36,7 +36,7 @@ class CalendarTests(unittest.TestCase):
         self.assertIn('id="event-health-connect-festival-2026"', html)
         self.assertIn('id="event-vermillion-library-board-2026-10-21"', html)
         self.assertIn('id="event-helpline-family-volunteer-day-2026"', html)
-        self.assertIn('id="event-filters" action="" method="get" hidden', html)
+        self.assertIn('id="filter-disclosure" class="filter-disclosure" hidden open', html)
         self.assertEqual([{"src":"calendar.js", "defer":None}], tree.scripts)
 
     def test_expired_events_are_excluded_at_build_time(self):

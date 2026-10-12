@@ -14,8 +14,15 @@ with sync_playwright() as pw:
         page.wait_for_timeout(100)
         print('js',width,'scroll',page.evaluate('document.documentElement.scrollWidth'),'viewport',width,'visible_cards',page.locator('article.event-card:visible').count(),'form_visible',page.locator('form:visible').count())
         assert page.evaluate('document.documentElement.scrollWidth') <= width
-        assert page.locator('form:visible').count()==1
         assert page.locator('article.event-card:visible').count()>=1
+        disclosure = page.locator('#filter-disclosure')
+        if width <= 600:
+            assert not disclosure.evaluate('(element) => element.open'), 'Mobile filters should start collapsed'
+            assert page.locator('form:visible').count() == 0
+            page.locator('summary').click()
+        else:
+            assert disclosure.evaluate('(element) => element.open'), 'Desktop filters should start expanded'
+        assert page.locator('form:visible').count() == 1
         page.select_option('#filter-area','Vermillion')
         print('js filter Vermillion',page.locator('article.event-card:visible').count())
         assert page.locator('article.event-card:visible').count() == 2

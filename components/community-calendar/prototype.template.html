@@ -18,7 +18,9 @@
     {{featured_section}}
     <section aria-labelledby="events-heading">
       <h2 id="events-heading">{{events.heading}}</h2>
-      <form class="event-filters" id="event-filters" action="" method="get" hidden>
+      <details id="filter-disclosure" class="filter-disclosure" hidden open>
+        <summary>{{filter.toggle}}</summary>
+        <form class="event-filters" id="event-filters" action="" method="get">
         <div class="filter-field">
           <label for="filter-area">{{filter.area}}</label>
           <select id="filter-area" name="area"><option value="">{{filter.all_areas}}</option>{{area_options}}</select>
@@ -34,8 +36,9 @@
         <div class="filter-field check-field">
           <label><input id="filter-free" name="free" type="checkbox"> {{filter.free}}</label>
         </div>
-        <button type="reset">{{filter.reset}}</button>
-      </form>
+          <button type="reset">{{filter.reset}}</button>
+        </form>
+      </details>
       <p id="results-count" role="status" aria-live="polite" class="result-summary" hidden data-single="{{results.count_single}}" data-plural="{{results.count_plural}}"></p>
       <p id="no-results" {{no_results_hidden}}>{{results.none}}</p>
       <div id="event-list" class="event-list">{{event_cards}}</div>

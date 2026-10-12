@@ -1,6 +1,7 @@
 /* Progressive enhancement only: all event details are present in static HTML. */
 (() => {
   "use strict";
+  const disclosure = document.querySelector("#filter-disclosure");
   const form = document.querySelector("#event-filters");
   const cards = Array.from(document.querySelectorAll(".event-card"));
   if (!form) return;
@@ -52,7 +53,10 @@
     }
     if (noResults) noResults.hidden = count !== 0;
   }
-  form.hidden = false;
+  if (disclosure) {
+    disclosure.hidden = false;
+    disclosure.open = !window.matchMedia("(max-width: 600px)").matches;
+  }
   if (status) status.hidden = false;
   form.addEventListener("change", applyFilters);
   form.addEventListener("reset", () => requestAnimationFrame(applyFilters));
