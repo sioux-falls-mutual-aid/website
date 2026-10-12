@@ -1,0 +1,38 @@
+[
+  {
+    "id": "health-connect-sd",
+    "name": "Health Connect of South Dakota",
+    "website": "https://www.healthconnectsd.org/",
+    "events_url": "https://www.healthconnectsd.org/festival",
+    "facebook_url": null,
+    "base_community": "Sioux Falls",
+    "research_status": "official_site_found"
+  },
+  {
+    "id": "transformation-project",
+    "name": "The Transformation Project",
+    "website": "https://www.transformationprojectsd.org/",
+    "events_url": "https://www.transformationprojectsd.org/events",
+    "facebook_url": null,
+    "base_community": "Sioux Falls",
+    "research_status": "official_site_found"
+  },
+  {
+    "id": "city-of-vermillion",
+    "name": "City of Vermillion",
+    "website": "https://www.vermillion.us/",
+    "events_url": "https://www.vermillion.us/Calendar.aspx",
+    "facebook_url": null,
+    "base_community": "Vermillion",
+    "research_status": "official_site_found"
+  },
+  {
+    "id": "helpline-center",
+    "name": "Helpline Center",
+    "website": "https://www.helplinecenter.org/",
+    "events_url": "https://www.helplinecenter.org/events/family-volunteer-day/",
+    "facebook_url": null,
+    "base_community": "Sioux Falls",
+    "research_status": "official_site_found"
+  }
+]
